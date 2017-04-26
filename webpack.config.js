@@ -32,8 +32,8 @@ var plugins = [
     }),
     new CopyWebpackPlugin(packages, {ignore: ['*.gitignore']}),
     new CleanWebpackPlugin(['build']),
-    // new GitRevisionPlugin(),
-    // new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:[`/bin/bash ./postbuild.sh --dir=${releaseDir}`]})
+    new GitRevisionPlugin(),
+    new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:[`/bin/bash ./postbuild.sh --dir=${releaseDir}`]})
 ];
 
 var config = {
