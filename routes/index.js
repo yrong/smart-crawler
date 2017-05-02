@@ -10,11 +10,13 @@ router.get('/', function(ctx, next) {
 });
 
 router.get('/jrgz/photos', async function(ctx, next) {
+    ctx.jsonBody == true
 	var items = await jrgzController.findPhotoNews()
 	ctx.body = items;
 })
 
 router.get('/jrgz/today', async function(ctx, next) {
+    ctx.jsonBody == true
 	var items = await jrgzController.findTodayNews();
 	ctx.body = items;
 })

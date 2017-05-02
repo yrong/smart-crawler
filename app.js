@@ -36,9 +36,17 @@ app.use(async(ctx, next) => {
         const start = new Date();
         await next();
         const ms = new Date() - start;
+        if(ctx.type === 'application/json' || ctx.jsonBody == true)
+            ctx.body = {status: 'ok',message:{content:'operation success',displayAs:'toast'},data:ctx.body||{}}
         logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
     }catch(error){
-        ctx.body = String(error)
+        ctx.body = {
+            status:"error",
+            message:{
+                content: String(error),
+                displayAs:"modal"
+            }
+        }
         ctx.status = error.status || 500
         logger.error('%s %s - %s', ctx.method,ctx.url, String(error))
 	}

@@ -18,9 +18,12 @@ class JrgzController {
     }
 
     async findPhotoNews() {
+        logger.info(`crawl page from ${this.url}`)
         let $ = await this.loadPage(this.url)
         var items = {},hrefs = []
-        $('.components4 .s4-wpTopTable ul li p a').each(function(i, elem) {
+        let selector = '.components4 .s4-wpTopTable ul li p a'
+        logger.info(`select elements from ${selector}`)
+        $(selector).each(function(i, elem) {
             var $element = $(elem);
             if($element&&$element.attr('href')){
                 let title = $element.text()
@@ -42,9 +45,12 @@ class JrgzController {
 	};
 
 	async findTodayNews() {
+        logger.info(`crawl page from ${this.url}`)
         let $ = await this.loadPage(this.url)
         var items = {},hrefs = []
-        $('.components5 .s4-wpTopTable .x-title-jryw a').each(function(i, elem) {
+        let selector = '.components5 .s4-wpTopTable .x-title-jryw a'
+        logger.info(`select elements from ${selector}`)
+        $(selector).each(function(i, elem) {
             var $element = $(elem);
             if($element&&$element.attr('href')){
                 let title = $element.text()
