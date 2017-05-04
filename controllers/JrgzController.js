@@ -20,54 +20,31 @@ class JrgzController {
     async findPhotoNews() {
         logger.info(`crawl page from ${this.url}`)
         let $ = await this.loadPage(this.url)
-        var items = {},hrefs = []
-        let selector = '.components4 .s4-wpTopTable ul li p a'
-        logger.info(`select elements from ${selector}`)
-        $(selector).each(function(i, elem) {
-            var $element = $(elem);
-            if($element&&$element.attr('href')){
-                let title = $element.text()
-                let href = $element.attr('href')
-                hrefs.push(href)
-                items[href] = {title:title}
-            }
+        var items = [],selector = '.components4 .s4-wpTopTable ul li'
+        logger.info(`select ${$(selector).length} elements from ${selector}`)
+        $(selector).each(function() {
+            let $url = $(this).find('a')
+            let url = $url.attr('href')
+            let image = $url.find('img').attr('src')
+            let title = $($(this).find('p a')[1]).text()
+            items.push({url,title,image})
         })
-        for(let href of hrefs){
-            let href_html
-            try {
-                href_html = await superagent.get(href)//('http://www.cnpc.com.cn/cnpc/jtxw/201704/6c201cfadab44ab385ef20219ec1b2cd.shtml')
-            }catch(error){
-                logger.error(`${href}:${String(error)}`)
-            }
-            items[href]['html'] = href_html?href_html.text:{}
-        }
         return items
 	};
 
 	async findTodayNews() {
         logger.info(`crawl page from ${this.url}`)
         let $ = await this.loadPage(this.url)
-        var items = {},hrefs = []
-        let selector = '.components5 .s4-wpTopTable .x-title-jryw a'
-        logger.info(`select elements from ${selector}`)
-        $(selector).each(function(i, elem) {
-            var $element = $(elem);
-            if($element&&$element.attr('href')){
-                let title = $element.text()
-                let href = $element.attr('href')
-                hrefs.push(href)
-                items[href] = {title:title}
-            }
+        var items = [],selector = '.components5 .s4-wpTopTable'
+        logger.info(`select element from ${selector}`)
+        let $jrwy = $($(selector).find('ul')[1])
+        logger.info(`select 2nd element from ul`)
+        logger.info(`select ${$jrwy.find('li a').length} elements from li a`)
+        $jrwy.find('li a').each(function(){
+            let url = $(this).attr('href')
+            let title = $(this).text()
+            items.push({url,title})
         })
-        for(let href of hrefs){
-            let href_html
-            try {
-                href_html = await superagent.get(href)
-            }catch(error){
-                logger.error(`${href}:${String(error)}`)
-            }
-            items[href]['html'] = href_html?href_html.text:{}
-        }
         return items
 	};
 }
