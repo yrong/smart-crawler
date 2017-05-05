@@ -4,7 +4,7 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "config": "^1.25.1",
-    "elasticsearch": "^13.0.0-rc2",
+    "elasticsearch": "^13.0.0",
     "kcors": "^2.1.1",
     "koa": "^2.0.0",
     "koa-bodyparser": "^3.1.0",
@@ -14,9 +14,11 @@
     "koa-router": "^7.0.1",
     "koa-static": "^2.0.0",
     "koa-views": "^5.0.2",
+    "lodash": "^4.17.4",
     "log4js": "^1.1.1",
     "moment": "^2.15.2",
     "redis": "^2.6.3",
+    "request": "^2.81.0",
     "superagent": "^2.3.0",
     "superagent-charset": "^1.1.1"
   },

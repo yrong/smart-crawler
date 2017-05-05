@@ -1,0 +1,210 @@
+IMG {
+	BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px
+}
+#count {
+	FLOAT: left
+}
+.allContent {
+	MARGIN-LEFT: 30px; TEXT-DECORATION: none; MIN-HEIGHT: 600px; WIDTH: 93%
+}
+#leftContent {
+	FLOAT: left; COLOR: #494949; TEXT-DECORATION: none; MARGIN-TOP: 10px
+}
+#leftContent A {
+	FONT-SIZE: 13px; FONT-WEIGHT: bold; COLOR: #494949; TEXT-DECORATION: none
+}
+#leftContent UL {
+	LIST-STYLE-TYPE: none; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 10px; MARGIN: 0px; PADDING-RIGHT: 0px
+}
+#leftContent LI {
+	MARGIN-BOTTOM: 10px; HEIGHT: 23px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/listButton.gif); BACKGROUND-REPEAT: no-repeat; PADDING-TOP: 8px; PADDING-LEFT: 35px; MARGIN-LEFT: 0px; MARGIN-TOP: 10px; WIDTH: 180px
+}
+#listLine {
+	HEIGHT: 547px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/listLine.gif); FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN-LEFT: 0px; MARGIN-TOP: 20px; PADDING-RIGHT: 0px; WIDTH: 4px
+}
+.rightContent {
+	FLOAT: left; MARGIN-LEFT: 15px; MARGIN-TOP: 20px; DISPLAY: block
+}
+.hideRightContent {
+	FLOAT: left; MARGIN-LEFT: 15px; MARGIN-TOP: 20px; DISPLAY: none
+}
+#local {
+	PADDING-BOTTOM: 7px; PADDING-TOP: 7px
+}
+#local A {
+	COLOR: #494949; TEXT-DECORATION: none
+}
+#text {
+	BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; PADDING-LEFT: 10px; MIN-HEIGHT: 550px; BORDER-LEFT: #cccccc 1px solid; MARGIN-TOP: 5px; PADDING-RIGHT: 10px; WIDTH: 655px
+}
+#text1 {
+	BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; PADDING-LEFT: 10px; MIN-HEIGHT: 550px; BORDER-LEFT: #cccccc 1px solid; MARGIN-TOP: 5px; PADDING-RIGHT: 10px
+}
+.textTitle {
+	BORDER-LEFT-WIDTH: 1px; MARGIN-BOTTOM: 0px; FONT-SIZE: 24px; BORDER-TOP: #cccccc 1px dashed; HEIGHT: auto; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-RIGHT-WIDTH: 1px; BORDER-BOTTOM: #cccccc 1px dashed; FONT-WEIGHT: bold; TEXT-ALIGN: center; TEXT-DECORATION: none; MARGIN-TOP: 10px; BORDER-RIGHT-COLOR: #cccccc; LINE-HEIGHT: 42px; WIDTH: 100%; BORDER-LEFT-COLOR: #cccccc
+}
+.littleTextTitle {
+	FONT-SIZE: 14px; FONT-WEIGHT: bold; TEXT-ALIGN: center
+}
+.noborder {
+	BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px
+}
+.textContent {
+	MARGIN-BOTTOM: 10px; FONT-SIZE: 14px; FONT-FAMILY: Arial, Helvetica, sans-serif; PADDING-LEFT: 15px; TEXT-DECORATION: none; MIN-HEIGHT: 535px; MARGIN-TOP: 20px; LINE-HEIGHT: 26px; PADDING-RIGHT: 15px; WIDTH: 95%
+}
+.textContent DIV {
+	MARGIN: 10px 0px
+}
+.textContent1 {
+	MARGIN-BOTTOM: 10px; FONT-SIZE: 14px; FONT-FAMILY: Arial, Helvetica, sans-serif; PADDING-LEFT: 15px; TEXT-DECORATION: none; MIN-HEIGHT: 535px; MARGIN-TOP: 20px; LINE-HEIGHT: 26px; PADDING-RIGHT: 15px; WIDTH: 95%
+}
+#key {
+	HEIGHT: 16px; WIDTH: 520px
+}
+#pageNumber {
+	MARGIN-BOTTOM: 20px; FONT-SIZE: 12px; BORDER-TOP: #cccccc 1px dashed; FLOAT: left; COLOR: #494949; TEXT-ALIGN: right; PADDING-TOP: 10px; TEXT-DECORATION: none; MARGIN-TOP: auto; WIDTH: 100%
+}
+#newslist2 UL {
+	LIST-STYLE-TYPE: none; FLOAT: left; LIST-STYLE-IMAGE: url(/_layouts/images/COResourceDeploy/newsPoint.gif); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN-LEFT: 20px; MARGIN-TOP: 0px; LINE-HEIGHT: 26px; PADDING-RIGHT: 0px
+}
+#newslist2 UL LI {
+	HEIGHT: auto; FLOAT: left; MIN-HEIGHT: 26px
+}
+#newslist2 UL LI A {
+	HEIGHT: auto; FLOAT: left; MIN-HEIGHT: 26px; DISPLAY: block; WIDTH: 480px
+}
+#newslist2 UL LI SPAN {
+	FONT-SIZE: 12px; FLOAT: left; MARGIN-LEFT: 33px; LINE-HEIGHT: 26px; WIDTH: 80px
+}
+#secfoot {
+	MARGIN-BOTTOM: 0px; FONT-SIZE: 12px; BORDER-BOTTOM: #cccccc 1px solid; PADDING-BOTTOM: 10px; TEXT-ALIGN: center; MARGIN-LEFT: 10px; TEXT-DECORATION: none; MARGIN-TOP: 20px; LINE-HEIGHT: 20px; WIDTH: 955px
+}
+.secfootPic {
+	MARGIN-BOTTOM: 10px; HEIGHT: 9px; VERTICAL-ALIGN: middle; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/footLine.gif); BACKGROUND-REPEAT: repeat-x; MARGIN-TOP: 10px; WIDTH: 100%
+}
+.leadersList {
+	COLOR: #03356c; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 10px 0px; PADDING-RIGHT: 0px; WIDTH: 610px
+}
+.leadersList LI {
+	HEIGHT: 45px; TEXT-ALIGN: center; MARGIN: 0px; WIDTH: 100%
+}
+.leadersList .firLine {
+	FONT-SIZE: 12px; FLOAT: left; FONT-WEIGHT: normal; TEXT-ALIGN: center; WIDTH: 100%
+}
+.leadersList .secLine {
+	FONT-SIZE: 18px; FLOAT: left; COLOR: #4a4b4b; TEXT-ALIGN: center; WIDTH: 100%
+}
+#yearPoints {
+	PADDING-LEFT: 12px; MARGIN: 0px; PADDING-RIGHT: 12px
+}
+.yearPoint {
+	MARGIN-BOTTOM: 5px; HEIGHT: 23px; VERTICAL-ALIGN: middle; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/yearPoint0.gif); BACKGROUND-REPEAT: no-repeat; FLOAT: left; COLOR: #881816; TEXT-ALIGN: center; MARGIN-LEFT: 2px; TEXT-DECORATION: none; WIDTH: 59px; MARGIN-RIGHT: 2px
+}
+.yearPointOn {
+	MARGIN-BOTTOM: 5px; HEIGHT: 23px; VERTICAL-ALIGN: middle; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/yearPoint.gif); BACKGROUND-REPEAT: no-repeat; FLOAT: left; COLOR: #881816; TEXT-ALIGN: center; MARGIN-LEFT: 2px; TEXT-DECORATION: none; WIDTH: 59px; MARGIN-RIGHT: 2px
+}
+.display {
+	DISPLAY: block
+}
+.hidden {
+	DISPLAY: none
+}
+.eventTable {
+	PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: #cccccc 1px solid; PADDING-RIGHT: 0px; WIDTH: 100%
+}
+.eventTable TD {
+	BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: #cccccc 1px solid; PADDING-BOTTOM: 5px; TEXT-ALIGN: center; PADDING-TOP: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; WIDTH: 13%; BACKGROUND-COLOR: #f3f3f3
+}
+.eventTable .eventTableSectd {
+	TEXT-ALIGN: left; WIDTH: 87%; BACKGROUND-COLOR: #ffffff
+}
+.studyHead {
+	HEIGHT: 35px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/studyHead.gif); BACKGROUND-REPEAT: no-repeat; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WIDTH: 640px
+}
+.studyTitle {
+	FONT-SIZE: 14px; HEIGHT: 35px; FLOAT: left; FONT-WEIGHT: bold; COLOR: #da7501; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN-LEFT: 90px; TEXT-DECORATION: none; LINE-HEIGHT: 35px; PADDING-RIGHT: 0px
+}
+.studyBody {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/studyBorder.gif); BACKGROUND-REPEAT: repeat-y; PADDING-BOTTOM: 0px; PADDING-TOP: 10px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; WIDTH: 640px
+}
+.columnName {
+	MARGIN-BOTTOM: 5px; FONT-SIZE: 12px; FLOAT: left; FONT-WEIGHT: bold; COLOR: #fcb364; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN-LEFT: 10px; TEXT-DECORATION: none; MARGIN-TOP: 5px; LINE-HEIGHT: 15px; PADDING-RIGHT: 0px; WIDTH: 15px
+}
+.studyContent {
+	FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; WIDTH: 600px
+}
+.studyLine {
+	HEIGHT: 32px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/studyLine.gif); BACKGROUND-REPEAT: no-repeat; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WIDTH: 640px
+}
+.studyFoot {
+	HEIGHT: 18px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/studyFoot.gif); BACKGROUND-REPEAT: no-repeat; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WIDTH: 640px
+}
+.studyMore {
+	FONT-SIZE: 14px; HEIGHT: 22px; TEXT-ALIGN: center; MARGIN-LEFT: 570px; TEXT-DECORATION: none; LINE-HEIGHT: 22px; WIDTH: 60px; BACKGROUND-COLOR: #ffffff
+}
+.studyList {
+	MARGIN-BOTTOM: 5px; FONT-SIZE: 12px; HEIGHT: auto; FLOAT: left; PADDING-LEFT: 22px; MARGIN-LEFT: 15px; TEXT-DECORATION: none; LINE-HEIGHT: 20px
+}
+.musicList {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/musicIcon.gif); BACKGROUND-REPEAT: no-repeat
+}
+.musicList2 {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/musicIcon2.gif); BACKGROUND-REPEAT: no-repeat
+}
+.folderList {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/folderIcon.gif); BACKGROUND-REPEAT: no-repeat
+}
+.videoList {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/videoIcon.gif); BACKGROUND-REPEAT: no-repeat
+}
+.readList {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/readIcon.gif); BACKGROUND-REPEAT: no-repeat
+}
+.studyListWidth {
+	WIDTH: 160px
+}
+.studyListWidth2 {
+	WIDTH: 110px
+}
+.videoPS {
+	FONT-SIZE: 12px; HEIGHT: 20px; FONT-WEIGHT: bold; COLOR: #fcb364; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN-LEFT: 30px; TEXT-DECORATION: none; PADDING-RIGHT: 0px; WIDTH: 550px
+}
+#music {
+	MARGIN-BOTTOM: 15px
+}
+#video {
+	MARGIN-BOTTOM: 15px
+}
+#reading {
+	MARGIN-BOTTOM: 15px
+}
+.accessoryLine {
+	HEIGHT: 5px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/accessoryLine.gif); BACKGROUND-REPEAT: repeat-x; MARGIN-LEFT: 20px; WIDTH: 95%
+}
+.accessoryList {
+	MARGIN-BOTTOM: 5px; HEIGHT: 23px; BACKGROUND-REPEAT: no-repeat; PADDING-LEFT: 30px; MARGIN-LEFT: 30px; LINE-HEIGHT: 23px
+}
+.pdfIcon {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/pdfIcon.png)
+}
+.wordIcon {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/wordIcon.png)
+}
+.pptIcon {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/pptIcon.png)
+}
+.excelIcon {
+	BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/excelIcon.png)
+}
+.toolbars {
+	HEIGHT: 40px; BORDER-BOTTOM: #cccccc 1px dashed; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN-LEFT: 20px; PADDING-RIGHT: 0px; WIDTH: 95%
+}
+.newsDate {
+	HEIGHT: 40px; FLOAT: left; PADDING-BOTTOM: 0px; TEXT-ALIGN: center; PADDING-TOP: 0px; PADDING-LEFT: 0px; LINE-HEIGHT: 40px; PADDING-RIGHT: 0px; WIDTH: 95%
+}
+.wordSize {
+	HEIGHT: 40px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; LINE-HEIGHT: 40px; PADDING-RIGHT: 0px; WIDTH: 45%
+}
+.print {
+	HEIGHT: 40px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/printIcon.gif); BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left center; FLOAT: left; PADDING-LEFT: 26px; MARGIN: 0px; LINE-HEIGHT: 40px
+}

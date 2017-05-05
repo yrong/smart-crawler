@@ -1,0 +1,507 @@
+BODY {
+	FONT-SIZE: 12px; FONT-FAMILY: "????"; COLOR: #454545; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; TEXT-DECORATION: none; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-RIGHT: 0px
+}
+BODY UL {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px
+}
+BODY A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+BODY A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+BODY A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+BODY A:hover {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+BODY A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+BODY P {
+	FONT-SIZE: 14px; MARGIN: 10px 5px; LINE-HEIGHT: 26px; TEXT-INDENT: 2em
+}
+#main {
+	PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px auto; PADDING-RIGHT: 0px; WIDTH: 960px
+}
+#logo {
+	MARGIN-BOTTOM: 0px; HEIGHT: 105px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/head.jpg); BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left 50%; MARGIN-LEFT: 10px; MARGIN-TOP: 0px; WIDTH: 960px
+}
+#search {
+	HEIGHT: 20px; FLOAT: right; MARGIN: 60px 30px 0px 0px; WIDTH: 240px
+}
+SELECT.ms-sbscopes {
+	WIDTH: 80px
+}
+.s4-search INPUT.ms-sbplain {
+	WIDTH: 120px !important
+}
+#login {
+	FLOAT: right; MARGIN-TOP: 60px; MARGIN-RIGHT: 60px
+}
+#login .loginImg {
+	HEIGHT: 18px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/login.gif); BACKGROUND-REPEAT: no-repeat; WIDTH: 40px
+}
+#menu {
+	HEIGHT: 32px; BACKGROUND: #cc0000; COLOR: #fff; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WIDTH: 960px
+}
+#menu UL {
+	LIST-STYLE-TYPE: none; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px
+}
+#menu LI {
+	FLOAT: left; COLOR: #ffffff; TEXT-ALIGN: center; TEXT-DECORATION: none; LINE-HEIGHT: 32px; WIDTH: 128px
+}
+#menu A {
+	FONT-SIZE: 16px; FONT-FAMILY: "????"; COLOR: #ffffff; TEXT-DECORATION: none
+}
+#menu A:hover {
+	COLOR: #ffff00; TEXT-DECORATION: none
+}
+#content1 {
+	HEIGHT: 335px; BACKGROUND: url(/_layouts/images/COResourceDeploy/img_angle.png) no-repeat; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 10px 0px 20px; PADDING-RIGHT: 0px; WIDTH: 960px
+}
+#picNews {
+	HEIGHT: 330px; FLOAT: left; MARGIN: 10px 0px 0px 12px; WIDTH: 540px
+}
+#companyNews {
+	HEIGHT: 335px; FLOAT: left; MARGIN: 0px 0px 0px 20px; WIDTH: 385px
+}
+#companyNews .title {
+	FONT-SIZE: 16px; BORDER-TOP: #054c82 2px solid; HEIGHT: 26px; BORDER-RIGHT: #d3d3d3 1px solid; FLOAT: left; FONT-WEIGHT: bold; COLOR: #203d77; TEXT-ALIGN: center; BORDER-LEFT: #d3d3d3 1px solid; WIDTH: 78px
+}
+#companyNews .more {
+	FONT-SIZE: 12px; HEIGHT: 27px; FONT-FAMILY: Arial; BORDER-BOTTOM: #d3d3d3 1px solid; FLOAT: left; COLOR: #a82221; PADDING-BOTTOM: 0px; TEXT-ALIGN: right; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; WIDTH: 300px
+}
+#companyNews UL {
+	FONT-FAMILY: "??"; FLOAT: left; MARGIN-TOP: 7px; WIDTH: 375px
+}
+#companyNews UL LI {
+	OVERFLOW: hidden; HEIGHT: 28px; LIST-STYLE-POSITION: inside; FLOAT: left; LIST-STYLE-IMAGE: url(/_layouts/images/COResourceDeploy/icon_box.jpg); PADDING-LEFT: 4px; WIDTH: 95%
+}
+#companyNews UL LI SPAN {
+	FLOAT: right; DISPLAY: block
+}
+#companyNews UL LI A {
+	COLOR: #656565
+}
+#companyNews UL LI A:hover {
+	COLOR: #cc0000
+}
+.clearboth {
+	CLEAR: both
+}
+.line {
+	HEIGHT: 20px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/content_bj.png); BACKGROUND-REPEAT: repeat-x; WIDTH: 960px
+}
+#box {
+	HEIGHT: 1060px; WIDTH: 960px
+}
+#box_left {
+	HEIGHT: 1060px; FLOAT: left; MARGIN-LEFT: 2px; WIDTH: 230px
+}
+#box_right {
+	HEIGHT: 1060px; FLOAT: right; MARGIN-LEFT: 13px; WIDTH: 713px
+}
+#box_top {
+	HEIGHT: 324px; WIDTH: 713px
+}
+#box_center {
+	HEIGHT: 285px; MARGIN-TOP: 12px; WIDTH: 713px
+}
+#img_lx {
+	HEIGHT: 42px; MARGIN-TOP: 12px; WIDTH: 230px
+}
+#content2 {
+	HEIGHT: 316px; FLOAT: right; WIDTH: 730px
+}
+#topic_abroad {
+	HEIGHT: 316px; FLOAT: left; WIDTH: 230px
+}
+#topicNews {
+	FONT-SIZE: 16px; BORDER-TOP: #cedce9 1px solid; HEIGHT: auto; BORDER-RIGHT: #cedce9 1px solid; BACKGROUND: #f7f7f7; BORDER-BOTTOM: #cedce9 1px solid; COLOR: #203d77; MIN-HEIGHT: 178px; BORDER-LEFT: #cedce9 1px solid; WIDTH: 228px
+}
+#topicNews .title {
+	FONT-SIZE: 16px; HEIGHT: 17px; BACKGROUND: #e8edf3; BORDER-BOTTOM: #cedce9 1px solid; FONT-WEIGHT: bold; COLOR: #203d77; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; WIDTH: 218px
+}
+#topicNews .list {
+	FONT-SIZE: 12px; HEIGHT: auto; FONT-FAMILY: "??"; COLOR: #656565; PADDING-TOP: 4px; PADDING-LEFT: 4px; MIN-HEIGHT: 140px; LINE-HEIGHT: 28px; PADDING-RIGHT: 4px; WIDTH: 220px
+}
+#topicNews UL LI A {
+	COLOR: #656565
+}
+#topicNews UL LI A:hover {
+	COLOR: #cc0000
+}
+#abroadCompany {
+	BORDER-TOP: #d3d3d3 1px solid; HEIGHT: 123px; BORDER-RIGHT: #d3d3d3 1px solid; BORDER-BOTTOM: #d3d3d3 1px solid; COLOR: #656565; MARGIN: 12px 0px 0px; BORDER-LEFT: #d3d3d3 1px solid; WIDTH: 228px
+}
+#abroadCompany .title {
+	FONT-SIZE: 16px; HEIGHT: 33px; BORDER-BOTTOM: #244c91 1px solid; FONT-WEIGHT: bold; COLOR: #960502; MARGIN-LEFT: 1px; LINE-HEIGHT: 33px; WIDTH: 226px
+}
+#abroadCompany .list {
+	FONT-SIZE: 12px; HEIGHT: 85px; FONT-FAMILY: "??"; COLOR: #656565; PADDING-LEFT: 4px; WIDTH: 220px
+}
+#abroadCompany UL {
+	PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; WIDTH: 220px
+}
+#abroadCompany UL LI {
+	HEIGHT: 29px; FLOAT: left; DISPLAY: block; WIDTH: 73px
+}
+#abroadCompany UL LI A {
+	COLOR: #656565
+}
+#abroadCompany UL LI A:hover {
+	COLOR: #cc0000
+}
+#notice {
+	HEIGHT: 316px; FLOAT: left; WIDTH: 340px
+}
+#notice .title {
+	FONT-SIZE: 16px; HEIGHT: 28px; FLOAT: left; FONT-WEIGHT: bold; COLOR: #203d77; TEXT-ALIGN: center; WIDTH: 80px
+}
+#notice .more {
+	FONT-SIZE: 12px; HEIGHT: 28px; FONT-FAMILY: Arial; FLOAT: left; COLOR: #999999; PADDING-BOTTOM: 0px; TEXT-ALIGN: right; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; WIDTH: 245px
+}
+#notice UL {
+	FONT-SIZE: 12px; BORDER-TOP: #000000 2px solid; HEIGHT: 286px; FONT-FAMILY: "??"; BORDER-RIGHT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; FLOAT: left; PADDING-TOP: 7px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 338px
+}
+#notice UL LI {
+	OVERFLOW: hidden; HEIGHT: 30px; BORDER-BOTTOM: #cccccc 1px solid; FLOAT: left; PADDING-LEFT: 4px; MARGIN-LEFT: 4px; LINE-HEIGHT: 29px; WIDTH: 95%
+}
+#notice UL LI SPAN {
+	FLOAT: right; DISPLAY: block
+}
+#notice UL LI A {
+	COLOR: #656565
+}
+#notice UL LI A:hover {
+	COLOR: #1f3b7b
+}
+#leaderSpeak {
+	HEIGHT: 316px; FLOAT: left; MARGIN: 0px 0px 0px 18px; WIDTH: 355px
+}
+#leaderSpeak .title {
+	FONT-SIZE: 16px; HEIGHT: 26px; BORDER-BOTTOM: #0b3695 2px solid; FLOAT: left; FONT-WEIGHT: bold; COLOR: #243c7a; TEXT-ALIGN: center; WIDTH: 80px
+}
+#leaderSpeak .more {
+	FONT-SIZE: 12px; HEIGHT: 26px; FONT-FAMILY: Arial; BORDER-BOTTOM: #c9c9c9 2px solid; FLOAT: left; COLOR: #999999; PADDING-BOTTOM: 0px; TEXT-ALIGN: right; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; WIDTH: 265px
+}
+#leaderSpeak .img {
+	HEIGHT: 67px; FLOAT: left; MARGIN-TOP: 10px; WIDTH: 352px
+}
+#leaderSpeak .list {
+	HEIGHT: 203px; FLOAT: left; MARGIN-TOP: 10px; WIDTH: 352px
+}
+#leaderSpeak UL {
+	FONT-SIZE: 12px; FONT-FAMILY: "??"; FLOAT: left; MARGIN-LEFT: 4px; MARGIN-TOP: 7px
+}
+#leaderSpeak UL LI {
+	HEIGHT: 29px; FLOAT: left; WIDTH: 95%
+}
+#leaderSpeak UL LI SPAN {
+	FLOAT: right; DISPLAY: block
+}
+#leaderSpeak UL LI A {
+	COLOR: #656565
+}
+#leaderSpeak UL LI A:hover {
+	COLOR: #1f3b7b
+}
+#content3 {
+	HEIGHT: 285px; MARGIN: 10px 0px 0px; WIDTH: 960px
+}
+#cglx_abroad {
+	HEIGHT: 285px; FLOAT: left; WIDTH: 230px
+}
+#abroadCountry {
+	BORDER-TOP: #d3d3d3 1px solid; HEIGHT: 200px; BORDER-RIGHT: #d3d3d3 1px solid; BORDER-BOTTOM: #d3d3d3 1px solid; COLOR: #656565; MARGIN: 10px 0px 0px; BORDER-LEFT: #d3d3d3 1px solid; WIDTH: 228px
+}
+#abroadCountry .title {
+	FONT-SIZE: 16px; HEIGHT: 33px; BORDER-BOTTOM: #244c91 1px solid; FONT-WEIGHT: bold; COLOR: #960502; MARGIN-LEFT: 1px; LINE-HEIGHT: 33px; WIDTH: 226px
+}
+#abroadCountry .list {
+	FONT-SIZE: 12px; HEIGHT: 195px; FONT-FAMILY: "??"; COLOR: #656565; PADDING-LEFT: 4px; WIDTH: 220px
+}
+#abroadCountry UL {
+	HEIGHT: 195px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; WIDTH: 220px
+}
+#abroadCountry UL LI {
+	HEIGHT: 25px; FLOAT: left; DISPLAY: block; WIDTH: 80px
+}
+#abroadCountry A {
+	COLOR: #656565
+}
+#abroadCountry UL LI A:hover {
+	COLOR: #cc0000
+}
+.li_style {
+	HEIGHT: 25px; WIDTH: 65px
+}
+#cglx {
+	HEIGHT: 40px; MARGIN: 0px; WIDTH: 230px
+}
+#oilInformation {
+	HEIGHT: 285px; FLOAT: left; WIDTH: 340px
+}
+#oilInformation .main {
+	HEIGHT: 27px; BORDER-BOTTOM: #000000 2px solid; WIDTH: 340px
+}
+#oilInformation .title {
+	FONT-SIZE: 16px; HEIGHT: 28px; FLOAT: left; FONT-WEIGHT: bold; COLOR: #000000; TEXT-ALIGN: center; WIDTH: 80px
+}
+#oilInformation .more {
+	FONT-SIZE: 12px; HEIGHT: 28px; FONT-FAMILY: Arial; FLOAT: left; COLOR: #999999; PADDING-BOTTOM: 0px; TEXT-ALIGN: right; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; WIDTH: 245px
+}
+#oilInformation .img {
+	HEIGHT: 75px; MARGIN-TOP: 10px; WIDTH: 340px
+}
+#oilInformation UL {
+	FONT-SIZE: 12px; HEIGHT: 150px; FONT-FAMILY: "??"; FLOAT: left; MARGIN-TOP: 7px; WIDTH: 340px
+}
+#oilInformation UL LI {
+	HEIGHT: 24px; LIST-STYLE-POSITION: inside; FLOAT: left; LIST-STYLE-IMAGE: url(/_layouts/images/COResourceDeploy/icon_box01.jpg); PADDING-LEFT: 4px; WIDTH: 316px
+}
+#oilInformation UL LI A {
+	COLOR: #656565
+}
+#oilInformation UL LI A:hover {
+	COLOR: #1f3b7b
+}
+#fileRead {
+	HEIGHT: 285px; FLOAT: left; MARGIN: 0px 0px 0px 18px; WIDTH: 355px
+}
+#fileRead .title {
+	FONT-SIZE: 16px; HEIGHT: 26px; BORDER-BOTTOM: #0b3695 2px solid; FLOAT: left; FONT-WEIGHT: bold; COLOR: #243c7a; TEXT-ALIGN: center; WIDTH: 80px
+}
+#fileRead .more {
+	FONT-SIZE: 12px; HEIGHT: 26px; FONT-FAMILY: Arial; BORDER-BOTTOM: #c9c9c9 2px solid; FLOAT: left; COLOR: #999999; PADDING-BOTTOM: 0px; TEXT-ALIGN: right; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; WIDTH: 265px
+}
+#fileRead UL {
+	HEIGHT: auto; FONT-FAMILY: "??"; FLOAT: left; MARGIN-TOP: 7px; WIDTH: 355px
+}
+#fileRead UL LI {
+	HEIGHT: 29px; FLOAT: left; WIDTH: 95%
+}
+#fileRead UL LI SPAN {
+	FLOAT: right; DISPLAY: block
+}
+#fileRead UL LI A {
+	COLOR: #656565
+}
+#fileRead UL LI A:hover {
+	COLOR: #1f3b7b
+}
+#content4 {
+	HEIGHT: 72px; MARGIN: 20px 0px 0px; WIDTH: 960px
+}
+#content5 {
+	HEIGHT: 412px; MARGIN-TOP: 20px; WIDTH: 960px
+}
+#content5_left {
+	HEIGHT: auto; FLOAT: left; WIDTH: 228px
+}
+#DomesticUnit {
+	BORDER-TOP: #d3d3d3 1px solid; HEIGHT: 125px; BORDER-RIGHT: #d3d3d3 1px solid; BORDER-BOTTOM: #d3d3d3 1px solid; BORDER-LEFT: #d3d3d3 1px solid; MARGIN-TOP: 12px; WIDTH: 226px
+}
+#DomesticUnit .title {
+	FONT-SIZE: 16px; HEIGHT: 33px; BORDER-BOTTOM: #244c91 1px solid; FONT-WEIGHT: bold; COLOR: #960502; MARGIN-LEFT: 1px; LINE-HEIGHT: 33px; WIDTH: 226px
+}
+#DomesticUnit .list {
+	FONT-SIZE: 12px; HEIGHT: 60px; FONT-FAMILY: "??"; PADDING-LEFT: 4px; WIDTH: 220px
+}
+#DomesticUnit UL {
+	HEIGHT: 60px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; WIDTH: 220px
+}
+#DomesticUnit UL LI {
+	HEIGHT: 28px; FLOAT: left; PADDING-LEFT: 10px; DISPLAY: block; LINE-HEIGHT: 30px; WIDTH: 100px
+}
+#DomesticUnit UL LI A {
+	COLOR: #656565
+}
+#DomesticUnit UL LI A:hover {
+	COLOR: #cc0000
+}
+#content5_right {
+	HEIGHT: 412px; MARGIN-TOP: 12px; WIDTH: 713px
+}
+#content5_top {
+	HEIGHT: 230px; WIDTH: 713px
+}
+#content5_bottom {
+	HEIGHT: 160px; BACKGROUND: url(/_layouts/images/COResourceDeploy/content5_bj.png) no-repeat; MARGIN-TOP: 20px; WIDTH: 713px
+}
+#Resource {
+	HEIGHT: auto; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-TOP: 13px; WIDTH: 154px
+}
+#Resource .title {
+	FONT-SIZE: 16px; HEIGHT: 24px; BORDER-BOTTOM: #cbcbcb 1px solid; COLOR: #000000; WIDTH: 154px
+}
+#Resource .list {
+	FONT-SIZE: 12px; HEIGHT: auto; FONT-FAMILY: "??"; BORDER-RIGHT: #cbcbcb 1px solid; COLOR: #656565; PADDING-LEFT: 4px; WIDTH: 150px
+}
+#Resource UL {
+	WIDTH: 150px
+}
+#Resource UL LI {
+	HEIGHT: 30px; FLOAT: left; DISPLAY: block; LINE-HEIGHT: 30px; WIDTH: 70px
+}
+#Resource UL LI A {
+	COLOR: #656565
+}
+#Resource UL LI A:hover {
+	COLOR: #cc0000
+}
+#Usefulinformation {
+	FLOAT: left; MARGIN-TOP: 13px; WIDTH: 223px
+}
+#Usefulinformation .title {
+	FONT-SIZE: 16px; HEIGHT: 24px; BORDER-BOTTOM: #cbcbcb 1px solid; COLOR: #000000; WIDTH: 215px
+}
+#Usefulinformation .list {
+	FONT-SIZE: 12px; FONT-FAMILY: "??"; COLOR: #656565; PADDING-LEFT: 10px; WIDTH: 213px
+}
+#Usefulinformation UL {
+	WIDTH: 214px
+}
+#Usefulinformation UL LI {
+	HEIGHT: 30px; FLOAT: left; DISPLAY: block; LINE-HEIGHT: 30px; WIDTH: 67px
+}
+#Usefulinformation UL LI A {
+	COLOR: #656565
+}
+#Usefulinformation UL LI A:hover {
+	COLOR: #cc0000
+}
+#Relatedlinks {
+	FLOAT: left; MARGIN-LEFT: 5px; MARGIN-TOP: 3px; WIDTH: 323px; BACKGROUND-COLOR: #f6f6f6
+}
+#Relatedlinks .title {
+	FONT-SIZE: 16px; HEIGHT: 24px; BORDER-BOTTOM: #cbcbcb 1px solid; COLOR: #000000; PADDING-TOP: 10px; PADDING-LEFT: 5px; WIDTH: 315px
+}
+#Relatedlinks .list {
+	FONT-SIZE: 12px; HEIGHT: auto; FONT-FAMILY: "??"; COLOR: #656565; PADDING-LEFT: 10px; WIDTH: 310px
+}
+#Relatedlinks UL {
+	WIDTH: 310px
+}
+#Relatedlinks UL LI {
+	HEIGHT: 30px; BORDER-BOTTOM: #cbcbcb 1px dashed; FLOAT: left; DISPLAY: block; LINE-HEIGHT: 30px; WIDTH: 100px
+}
+#Relatedlinks UL LI A {
+	COLOR: #656565
+}
+#Relatedlinks UL LI A:hover {
+	COLOR: #cc0000
+}
+#Electronicjournals {
+	HEIGHT: 230px; FLOAT: left; WIDTH: 340px
+}
+#Electronicjournals .title {
+	FONT-SIZE: 16px; HEIGHT: 28px; FLOAT: left; FONT-WEIGHT: bold; COLOR: #000000; TEXT-ALIGN: center; WIDTH: 80px
+}
+#Electronicjournals .main {
+	HEIGHT: 27px; BORDER-BOTTOM: #000000 2px solid; WIDTH: 340px
+}
+#Electronicjournals .list {
+	FONT-SIZE: 12px; HEIGHT: 110px; FONT-FAMILY: "??"; PADDING-LEFT: 10px; WIDTH: 330px
+}
+#Electronicjournals .more {
+	FONT-SIZE: 12px; HEIGHT: 28px; FONT-FAMILY: Arial; FLOAT: left; COLOR: #999999; PADDING-BOTTOM: 0px; TEXT-ALIGN: right; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; WIDTH: 245px
+}
+#Electronicjournals .img {
+	HEIGHT: 75px; MARGIN-TOP: 10px; WIDTH: 340px
+}
+#Electronicjournals UL {
+	HEIGHT: 110px; WIDTH: 320px
+}
+#Electronicjournals UL LI {
+	HEIGHT: 37px; FLOAT: left; LIST-STYLE-IMAGE: url(/_layouts/images/COResourceDeploy/jt_red.png); PADDING-LEFT: 4px; MARGIN-LEFT: 10px; LINE-HEIGHT: 36px; WIDTH: 146px
+}
+#Electronicjournals UL LI A {
+	COLOR: #656565
+}
+#Electronicjournals UL LI A:hover {
+	COLOR: #1f3b7b
+}
+#Translationsof {
+	HEIGHT: 230px; FLOAT: left; MARGIN-LEFT: 18px; WIDTH: 355px
+}
+#Translationsof .title {
+	FONT-SIZE: 16px; HEIGHT: 26px; BORDER-BOTTOM: #0b3695 2px solid; FLOAT: left; FONT-WEIGHT: bold; COLOR: #243c7a; TEXT-ALIGN: center; WIDTH: 80px
+}
+#Translationsof .more {
+	FONT-SIZE: 12px; HEIGHT: 26px; FONT-FAMILY: Arial; BORDER-BOTTOM: #c9c9c9 2px solid; FLOAT: left; COLOR: #999999; PADDING-BOTTOM: 0px; TEXT-ALIGN: right; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; WIDTH: 265px
+}
+#Translationsof UL {
+	HEIGHT: auto; FONT-FAMILY: "??"; FLOAT: left; MARGIN-TOP: 7px; WIDTH: 355px
+}
+#Translationsof UL LI {
+	HEIGHT: 28px; FLOAT: left; WIDTH: 280px
+}
+#Translationsof UL LI A {
+	COLOR: #656565
+}
+#Translationsof UL LI A:hover {
+	COLOR: #1f3b7b
+}
+#BusinessManagement {
+	HEIGHT: auto; WIDTH: 228px
+}
+#BusinessManagement .title {
+	FONT-SIZE: 16px; HEIGHT: 33px; BORDER-BOTTOM: #244c91 1px solid; FONT-WEIGHT: bold; COLOR: #000000; MARGIN-LEFT: 1px; LINE-HEIGHT: 33px; WIDTH: 226px
+}
+#BusinessManagement .list {
+	FONT-SIZE: 12px; FONT-FAMILY: "??"; BORDER-RIGHT: #d3d3d3 1px solid; BACKGROUND: url(/_layouts/images/COResourceDeploy/ywbj.jpg) no-repeat; BORDER-BOTTOM: #d3d3d3 1px solid; COLOR: #656565; PADDING-LEFT: 6px; BORDER-LEFT: #d3d3d3 1px solid; PADDING-RIGHT: 2px; WIDTH: 218px
+}
+#BusinessManagement UL {
+	HEIGHT: 295px; PADDING-BOTTOM: 0px; PADDING-TOP: 7px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; WIDTH: 218px
+}
+#BusinessManagement UL LI {
+	HEIGHT: 30px; FLOAT: left; DISPLAY: block; WIDTH: 107px
+}
+#BusinessManagement UL LI A {
+	COLOR: #656565
+}
+#BusinessManagement UL LI A:hover {
+	COLOR: #1f3b7b
+}
+#foot {
+	BORDER-TOP: #cbcbcb 1px solid; HEIGHT: 140px; TEXT-ALIGN: center; MARGIN-TOP: 20px; WIDTH: 960px; BACKGROUND-COLOR: #f6f6f6
+}
+.footPic {
+	HEIGHT: 12px; BACKGROUND-IMAGE: url(/_layouts/images/COResourceDeploy/footpic.gif); MARGIN-LEFT: 453px; WIDTH: 50px
+}
+.date {
+	FLOAT: right; MARGIN-RIGHT: 10px
+}
+.more_arrow02 {
+	FONT-SIZE: 10px; FONT-FAMILY: "????"; FONT-WEIGHT: bold; COLOR: #1f3b7b
+}
+.more_arrow01 {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial; COLOR: #999999
+}
+.more_arrow {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial; COLOR: #a82221
+}
+.dashed01 {
+	BORDER-BOTTOM: #cbcbcb 1px dashed
+}
+nav {
+	MARGIN: 1em auto; WIDTH: 150px
+}
+UL {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px
+}
+.dropdown {
+	MARGIN-LEFT: 30px
+}
+UL.dropdown LI {
+	LIST-STYLE-POSITION: outside; POSITION: relative; FONT-WEIGHT: bold; WIDTH: 200px
+}
+UL.dropdown LI A {
+	FONT-SIZE: 20px; POSITION: relative; FONT-WEIGHT: 300; TEXT-DECORATION: none; Z-INDEX: 2000; DISPLAY: block
+}
+UL.dropdown UL {
+	POSITION: absolute; LEFT: 0px; Z-INDEX: 1000; DISPLAY: none; TOP: 0px
+}

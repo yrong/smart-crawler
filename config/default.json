@@ -1,6 +1,7 @@
 {
   "port": 4000,
   "name": "crawler",
+  "perPageSize":2000,
   "logger":{
       "appenders": [
         {
@@ -29,7 +30,12 @@
 	},
 
    "crawlers":{
-      "jrgz":{"url":"http://www.cnpc/Pages/default.html"}
+      "jrgz":{
+        "url":"http://localhost:4000/main.html",
+        "selector":{
+          "photo_root":".components4 .s4-wpTopTable #focus1 ul"
+        }
+      }
    }
 
 
