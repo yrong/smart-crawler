@@ -6,6 +6,7 @@ var config = require('config')
 
 var jrgzController = new JrgzController(config.get('crawlers.jrgz.url'))
 var amuController = new AmuController(config.get('crawlers.amu.url'))
+var search = require('../search/index')
 
 router.get('/', function(ctx, next) {
 	ctx.body = 'this is response!';
@@ -26,6 +27,12 @@ router.get('/jrgz/news', async function(ctx, next) {
 router.get('/amu/photos',async function(ctx,next){
     ctx.jsonBody == true
     var items = await amuController.findPhotoNews()
+    ctx.body = items;
+})
+
+router.get('/search/:id',async function(ctx,next){
+    ctx.jsonBody == true
+    var items = await search.searchItem(ctx.params)
     ctx.body = items;
 })
 
