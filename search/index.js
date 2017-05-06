@@ -25,7 +25,7 @@ var addItem = async function(type, obj) {
         id: obj.id,
         body: obj
     }
-    logger.debug(`add index in es:${JSON.stringify(index_obj,null,'\t')}`)
+    logger.info(`add index in es:${JSON.stringify(index_obj,null,'\t')}`)
     return await es_client.index(index_obj)
 }
 
@@ -48,7 +48,7 @@ var searchItem = async function(params) {
         index: indexName,
         _source:_source
     },queryObj,params_pagination)
-    logger.debug(`search in es:${JSON.stringify(searchObj,null,'\t')}`)
+    logger.info(`search in es:${JSON.stringify(searchObj,null,'\t')}`)
     return await es_client.search(searchObj)
 }
 

@@ -17,6 +17,12 @@ router.get('/jrgz/photos', async function(ctx, next) {
 	ctx.body = items;
 })
 
+router.get('/jrgz/news', async function(ctx, next) {
+    ctx.jsonBody == true
+    var items = await jrgzController.findTodayNews()
+    ctx.body = items;
+})
+
 router.get('/amu/photos',async function(ctx,next){
     ctx.jsonBody == true
     var items = await amuController.findPhotoNews()

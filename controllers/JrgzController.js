@@ -5,7 +5,8 @@ const config = require('config')
 const path = require('path')
 const fs = require('fs')
 const search = require('../search')
-
+const _ = require('lodash')
+const JRGZ_TYPE = 'jrgz'
 
 class JrgzController {
     constructor(url) {
@@ -13,45 +14,82 @@ class JrgzController {
     }
 
     async findPhotoNews() {
-        logger.info(`crawl page from ${this.url}`)
         let $ = await utils.loadPage(this.url)
-        var items = [],selector = config.get('crawlers.jrgz.selector.photo_root'),url_obj = URL.parse(this.url)
-        let elements = $(selector).find('li'),id,element,url,title,html,image_url,$element,item
+        let items = [],selector = config.get('crawlers.jrgz.selector.photo_news_root'),url_obj = URL.parse(this.url)
+        let $root = $(selector)
+        if($root.length!=1){
+            throw new error(`find root element from "${selector}" failed`)
+        }
+        let elements = $root.find('li'),id,element,url,title,html,image_url,$element,item,$image,$$
+        logger.info(`find ${elements.length} photo news from "${selector} li"`)
         for(let i=0;i<elements.length;i++){
             element = elements[i]
-            $element = $(element).find('a')
-            url = $element.attr('href')
-            id = new Buffer(url).toString('base64')
+            $element = $(element).find('a').eq(0)
+            if($element.length!=1){
+                logger.error(`find link from "${selector} li a" failed`)
+                continue
+            }
             try {
-                image_url = $element.find('img').attr('src')
-                image_url = url_obj.protocol + "//" + url_obj.host + "/" + encodeURIComponent(image_url)
-                image_url = await utils.cacheImage(image_url)
-                let $$ = await utils.loadPage(url)
-                html = $$(config.get('crawlers.jrgz.selector.photo_html')).html()
-                title = $$(config.get('crawlers.jrgz.selector.photo_title')).text()
+                $image = $element.find('img')
+                if ($image.length) {
+                    logger.info(`find image from "${selector} li a img"`)
+                    image_url = $image.attr('src')
+                    image_url = url_obj.protocol + "//" + url_obj.host + "/" + encodeURIComponent(image_url)
+                    image_url = await utils.cacheImage(image_url)
+                }
+                url = $element.attr('href')
+                id = utils.getIdfromUrl(url)
+                $$ = await utils.loadPage(url)
+                selector = config.get('crawlers.jrgz.selector.photo_news_html')
+                logger.info(`select html from ${selector}`)
+                html = $$(selector).html()
+                selector = config.get('crawlers.jrgz.selector.photo_news_title')
+                logger.info(`select title from ${selector}`)
+                title = $$(selector).text()
                 item = {id,url,title,image_url,html}
-                await search.addItem('jrgz',item)
-            }catch(error){
+                await search.addItem(JRGZ_TYPE,item)
+                items.push(_.omit(item,'html'))
+            }
+            catch(error){
                 logger.error(String(error))
             }
-            items.push(item)
         }
         return items
 	};
 
 	async findTodayNews() {
-        logger.info(`crawl page from ${this.url}`)
         let $ = await utils.loadPage(this.url)
-        var items = [],selector = '.components5 .s4-wpTopTable'
-        logger.info(`select element from ${selector}`)
-        let $jrwy = $($(selector).find('ul')[1])
-        logger.info(`select 2nd element from ul`)
-        logger.info(`select ${$jrwy.find('li a').length} elements from li a`)
-        $jrwy.find('li a').each(function(){
-            let url = $(this).attr('href')
-            let title = $(this).text()
-            items.push({url,title})
-        })
+        var items = [],selector = config.get('crawlers.jrgz.selector.today_news_root')
+        logger.info(`select root element from ${selector}`)
+        let $ul = $(selector).eq(1)
+        if($ul.length!=1){
+            throw new Error(`find 2nd element from ${selector} failed`)
+        }
+        let elements = $ul.find('li'),element,$element,url,title,html,item,id,$$
+        logger.info(`find ${elements.length} today news from "${selector} li"`)
+        for(let i=0;i<elements.length;i++) {
+            element = elements[i]
+            $element = $(element).find('a').eq(0)
+            if($element.length!=1){
+                logger.error(`find today news link from "${selector} li a" failed`)
+                continue
+            }
+            url = $element.attr('href')
+            id = utils.getIdfromUrl(url)
+            title = $element.text()
+            try{
+                $$ = await utils.loadPage(url)
+                selector = config.get('crawlers.jrgz.selector.today_news_html')
+                logger.info(`select html from ${selector}`)
+                html = $$(selector).html()
+                item = {id,url, title, html}
+                await search.addItem(JRGZ_TYPE,item)
+                items.push(_.omit(item,'html'))
+            }
+            catch(error){
+                logger.error(String(error))
+            }
+        }
         return items
 	};
 }
