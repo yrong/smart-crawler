@@ -31,11 +31,20 @@
 
    "crawlers":{
       "jrgz":{
-        "url":"http://localhost:4000/main.html",
+        "url":"http://www.cnpc/Pages/default.html",
         "selector":{
-          "photo_root":".components4 .s4-wpTopTable #focus1 ul"
+          "photo_root":"#focus1 ul",
+          "photo_html": "#ctl00_PlaceHolderMain_Content__ControlWrapper_RichHtmlField",
+          "photo_title": "#ctl00_PlaceHolderMain_Title__ControlWrapper_RichHtmlField h1"
         }
-      }
+      },
+     "amu":{
+       "url":"http://10.161.134.146/Login.aspx",
+       "selector":{
+         "photo_root":"#NewsList5_divNewsList table tr td",
+         "photo_html": "#divContent"
+       }
+     }
    }
 
 

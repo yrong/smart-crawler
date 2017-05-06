@@ -24,7 +24,13 @@ if (!fs.existsSync(logDir)){
 }
 log4js.configure(logger_config,{ cwd: logDir });
 
-
+/**
+ * image folder
+ */
+let images_dir = path.resolve('./public/images_crawled')
+if (!fs.existsSync(images_dir)){
+    fs.mkdirSync(images_dir);
+}
 /**
  * middleware
  */
