@@ -10,6 +10,7 @@ const config = require('config')
 const logger = require('../logger')
 
 const loadPage = async (url) => {
+    logger.info(`start loading page from ${url}`)
     let res = await superagent.get(url).charset('UTF-8')
     logger.info(`page from ${url} crawled`)
     return cheerio.load(res.text, {
@@ -18,9 +19,16 @@ const loadPage = async (url) => {
     })
 }
 
-const downloadFile = async (url,filePath) => {
-    return new Promise((resolve,reject)=>{
-        request(url).pipe(fs.createWriteStream(filePath)).on('close', resolve).on('error',reject);
+const downloadFile = async (url, filePath) => {
+    return new Promise((resolve, reject) => {
+        request(url).pipe(fs.createWriteStream(filePath))
+            .on('close', () => {
+                resolve()
+            }).on('error', (error) => {
+                logger.error('download file error' + String(error))
+                reject(error)
+            }
+        );
     })
 }
 
@@ -40,6 +48,7 @@ const cacheImage = async (image_url) =>{
     let image_suffix = path.extname(image_url)
     let image_id = new Buffer(image_url).toString('base64').slice(0,240)
     let image_path = images_dir + '/' + image_id  + image_suffix
+    logger.info(`start caching image from ${image_url}`)
     await downloadFile(image_url,image_path)
     logger.info(`image from ${image_url} to ${image_path} cached`)
     let cached_image_url = "http://" + getExternelIP() + ":" + config.get('port') + "/images_crawled/" + image_id + image_suffix

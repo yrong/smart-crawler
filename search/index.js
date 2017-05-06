@@ -25,8 +25,9 @@ var addItem = async function(type, obj) {
         id: obj.id,
         body: obj
     }
-    logger.info(`add index in es:${JSON.stringify(index_obj,null,'\t')}`)
-    return await es_client.index(index_obj)
+    logger.info(`start adding index into es`)
+    await es_client.index(index_obj)
+    logger.info(`index added:${JSON.stringify(index_obj,null,'\t')}`)
 }
 
 
