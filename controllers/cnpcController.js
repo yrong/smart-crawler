@@ -6,16 +6,17 @@ const path = require('path')
 const fs = require('fs')
 const search = require('../search')
 const _ = require('lodash')
-const JRGZ_TYPE = 'jrgz'
+const CNPC_PHOTO_NEWS_TYPE = 'cnpc_photo_news'
+const CNPC_TODAY_NEWS_TYPE = 'cnpc_today_news'
 
-class JrgzController {
+class CnpcController {
     constructor(url) {
         this.url = url
     }
 
     async findPhotoNews() {
         let $ = await utils.loadPage(this.url)
-        let items = [],selector = config.get('crawlers.jrgz.selector.photo_news_root'),url_obj = URL.parse(this.url)
+        let items = [],selector = config.get('crawlers.cnpc.selector.photo_news_root'),url_obj = URL.parse(this.url)
         let $root = $(selector)
         if($root.length!=1){
             throw new error(`find root element from "${selector}" failed`)
@@ -40,14 +41,14 @@ class JrgzController {
                 url = $element.attr('href')
                 id = utils.getIdfromUrl(url)
                 $$ = await utils.loadPage(url)
-                selector = config.get('crawlers.jrgz.selector.photo_news_html')
+                selector = config.get('crawlers.cnpc.selector.photo_news_html')
                 logger.info(`select html from ${selector}`)
                 html = $$(selector).html()
-                selector = config.get('crawlers.jrgz.selector.photo_news_title')
+                selector = config.get('crawlers.cnpc.selector.photo_news_title')
                 logger.info(`select title from ${selector}`)
                 title = $$(selector).text()
                 item = {id,url,title,image_url,html}
-                await search.addItem(JRGZ_TYPE,item)
+                await search.addItem(CNPC_PHOTO_NEWS_TYPE,item)
                 items.push(_.omit(item,'html'))
             }
             catch(error){
@@ -59,7 +60,7 @@ class JrgzController {
 
 	async findTodayNews() {
         let $ = await utils.loadPage(this.url)
-        var items = [],selector = config.get('crawlers.jrgz.selector.today_news_root')
+        var items = [],selector = config.get('crawlers.cnpc.selector.today_news_root')
         logger.info(`select root element from ${selector}`)
         let $ul = $(selector).eq(1)
         if($ul.length!=1){
@@ -79,11 +80,11 @@ class JrgzController {
             title = $element.text()
             try{
                 $$ = await utils.loadPage(url)
-                selector = config.get('crawlers.jrgz.selector.today_news_html')
+                selector = config.get('crawlers.cnpc.selector.today_news_html')
                 logger.info(`select html from ${selector}`)
                 html = $$(selector).html()
                 item = {id,url, title, html}
-                await search.addItem(JRGZ_TYPE,item)
+                await search.addItem(CNPC_TODAY_NEWS_TYPE,item)
                 items.push(_.omit(item,'html'))
             }
             catch(error){
@@ -94,4 +95,4 @@ class JrgzController {
 	};
 }
 
-module.exports = JrgzController;
+module.exports = CnpcController;

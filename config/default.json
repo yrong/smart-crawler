@@ -20,7 +20,7 @@
     },
 
     "elasticsearch":{
-        "host": "192.168.0.100",
+        "host": "localhost",
         "port": 9200
     },
 
@@ -30,7 +30,7 @@
 	},
 
    "crawlers":{
-      "jrgz":{
+      "cnpc":{
         "url":"http://www.cnpc/Pages/default.html",
         "selector":{
           "photo_news_root":"#focus1 ul",
@@ -40,7 +40,7 @@
           "today_news_html":".wenzi2016"
         }
       },
-     "amu":{
+     "cnpcag":{
        "url":"http://10.161.134.146/Login.aspx",
        "selector":{
          "photo_news_root":"#NewsList5_divNewsList table tr td",

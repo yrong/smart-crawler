@@ -30,7 +30,6 @@ var addItem = async function(type, obj) {
     logger.info(`index added:${JSON.stringify(index_obj,null,'\t')}`)
 }
 
-
 var deleteAll = function(result,params,ctx) {
     return es_client.deleteByQuery({index:[getIndexName()],body:{query:{match_all:{}}}})
 }
@@ -38,7 +37,6 @@ var deleteAll = function(result,params,ctx) {
 var responseWrapper = function(response){
     return {count:response.hits.total,results:_.map(response.hits.hits,(result)=>_.omit(result._source,['_index','_type']))}
 }
-
 
 var searchItem = async function(params) {
     var query = params.id?`id:${params.id}`:(params.keyword?params.keyword:'*');

@@ -1,36 +1,36 @@
 var Router = require('koa-router');
 var router = new Router()
-var JrgzController = require('../controllers/JrgzController.js');
-var AmuController = require('../controllers/AmuController')
+var CnpcController = require('../controllers/cnpcController.js')
+var CnpcAgController = require('../controllers/cnpcAgController')
 var config = require('config')
 
-var jrgzController = new JrgzController(config.get('crawlers.jrgz.url'))
-var amuController = new AmuController(config.get('crawlers.amu.url'))
+var cnpcController = new CnpcController(config.get('crawlers.cnpc.url'))
+var cnpcAgController = new CnpcAgController(config.get('crawlers.cnpcag.url'))
 var search = require('../search/index')
 
 router.get('/', function(ctx, next) {
 	ctx.body = 'this is response!';
 });
 
-router.get('/jrgz/photos', async function(ctx, next) {
+router.get('/cnpc/photos', async function(ctx, next) {
     ctx.jsonBody == true
-	var items = await jrgzController.findPhotoNews()
+	var items = await cnpcController.findPhotoNews()
 	ctx.body = items;
 })
 
-router.get('/jrgz/news', async function(ctx, next) {
+router.get('/cnpc/today', async function(ctx, next) {
     ctx.jsonBody == true
-    var items = await jrgzController.findTodayNews()
+    var items = await cnpcController.findTodayNews()
     ctx.body = items;
 })
 
-router.get('/amu/photos',async function(ctx,next){
+router.get('/cnpcag/photos',async function(ctx,next){
     ctx.jsonBody == true
-    var items = await amuController.findPhotoNews()
+    var items = await cnpcAgController.findPhotoNews()
     ctx.body = items;
 })
 
-router.get('/search/:id',async function(ctx,next){
+router.get('/show/:id',async function(ctx,next){
     ctx.jsonBody == true
     var items = await search.searchItem(ctx.params)
     ctx.body = items;

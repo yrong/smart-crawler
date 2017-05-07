@@ -3,15 +3,16 @@ const logger = require('../logger')
 const URL = require('url')
 const config = require('config')
 const search = require('../search')
+const CNPCAG_PHOTO_NEWS_TYPE = 'cnpcag_photo_news'
 
-class AmuController {
+class CnpcAgController {
     constructor(url) {
         this.url = url
     }
 
     async findPhotoNews() {
         let $ = await utils.loadPage(this.url)
-        var items = [],selector = config.get('crawlers.amu.selector.photo_news_root')
+        var items = [],selector = config.get('crawlers.cnpcag.selector.photo_news_root')
         logger.info(`select root element from "${selector}"`)
         let $amu_root = $(selector)
         if($amu_root.length==0){
@@ -27,7 +28,7 @@ class AmuController {
             title = $(element).attr('title')
             try {
                 $$ = await utils.loadPage(url_obj.protocol + "//" + url_obj.host + url)
-                selector = config.get('crawlers.amu.selector.photo_news_html')
+                selector = config.get('crawlers.cnpcag.selector.photo_news_html')
                 logger.info(`select html from "${selector}"`)
                 html = $$(selector).html()
                 logger.info(`select image from "${selector} img"`)
@@ -38,7 +39,7 @@ class AmuController {
                     image_url = await utils.cacheImage(image_url)
                 }
                 item = {id,url,title,image_url,html}
-                await search.addItem('amu',item)
+                await search.addItem(CNPCAG_PHOTO_NEWS_TYPE,item)
             }catch(error){
                 logger.error(String(error))
             }
@@ -46,7 +47,6 @@ class AmuController {
         }
         return items
     };
-
 }
 
-module.exports = AmuController;
+module.exports = CnpcAgController;
