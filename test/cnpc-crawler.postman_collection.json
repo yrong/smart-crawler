@@ -4,9 +4,12 @@
 	"description": "",
 	"order": [
 		"3f76c87e-b005-7d0b-b640-8b5a476a54ab",
+		"fc4a54a1-8143-40a6-f230-45b2e18edf32",
 		"80818f7f-f26a-918e-f337-63a28fbb8e06",
 		"c706b60d-f9c2-9e69-4894-de2398a457e6",
-		"ee25afef-ae78-e2ac-6c81-d7b6d7e7ceff"
+		"ee25afef-ae78-e2ac-6c81-d7b6d7e7ceff",
+		"fbe8d9ae-4eef-f6b2-a794-91d5ac21a3bf",
+		"9eaa8c27-f293-fae6-146a-32ee2e5e80a4"
 	],
 	"folders": [],
 	"timestamp": 1494136262453,
@@ -16,7 +19,7 @@
 		{
 			"id": "3f76c87e-b005-7d0b-b640-8b5a476a54ab",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:9200/crawler",
+			"url": "http://localhost:9200/crawler/",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "DELETE",
@@ -25,8 +28,8 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1494140001353,
-			"name": "delete crawled data in es",
+			"time": 1494268129432,
+			"name": "delete index",
 			"description": "",
 			"collectionId": "f98b86b5-98f2-fa75-097e-89ca62684bc0"
 		},
@@ -46,6 +49,24 @@
 			"name": "crawl cnpc photo news",
 			"description": "",
 			"collectionId": "f98b86b5-98f2-fa75-097e-89ca62684bc0"
+		},
+		{
+			"id": "9eaa8c27-f293-fae6-146a-32ee2e5e80a4",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{url}}/search/advanced",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1494268073738,
+			"name": "search cnpcag photo news",
+			"description": "",
+			"collectionId": "f98b86b5-98f2-fa75-097e-89ca62684bc0",
+			"rawModeData": "{\n\t\"taskid\": \"1494267334120\"\n}"
 		},
 		{
 			"id": "c706b60d-f9c2-9e69-4894-de2398a457e6",
@@ -78,6 +99,47 @@
 			"helperAttributes": {},
 			"time": 1494138968387,
 			"name": "crawl cnpcag photo news",
+			"description": "",
+			"collectionId": "f98b86b5-98f2-fa75-097e-89ca62684bc0"
+		},
+		{
+			"id": "fbe8d9ae-4eef-f6b2-a794-91d5ac21a3bf",
+			"headers": "",
+			"url": "http://www.cnpc/zhlm/jrgz/jrgz/Pages/more.aspx",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "activepage",
+					"value": "15",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1494195422068,
+			"name": "crawl raw cnpc news",
+			"description": "",
+			"collectionId": "f98b86b5-98f2-fa75-097e-89ca62684bc0"
+		},
+		{
+			"id": "fc4a54a1-8143-40a6-f230-45b2e18edf32",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:9200/crawler/",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1494268192811,
+			"name": "create index",
 			"description": "",
 			"collectionId": "f98b86b5-98f2-fa75-097e-89ca62684bc0"
 		}

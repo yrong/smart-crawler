@@ -11,7 +11,8 @@ const log4js = require('log4js')
 const config = require('config')
 const path = require('path')
 const fs = require('fs')
-const crawler_route = require('./routes/index')
+const crawler_routes = require('./routes/crawler')
+const search_routes = require('./routes/search')
 const logger = require('./logger')
 
 /**
@@ -58,7 +59,8 @@ app.use(async(ctx, next) => {
 	}
 });
 
-router.use('/crawler', crawler_route.routes(), crawler_route.allowedMethods());
+router.use('/crawler', crawler_routes.routes(), crawler_routes.allowedMethods());
+router.use('/search', search_routes.routes(), search_routes.allowedMethods());
 app.use(router.routes(), router.allowedMethods());
 
 let port = config.get('port')

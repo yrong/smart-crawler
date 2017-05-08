@@ -25,9 +25,7 @@ var addItem = async function(type, obj) {
         id: obj.id,
         body: obj
     }
-    logger.info(`start adding index into es`)
     await es_client.index(index_obj)
-    logger.info(`index added:${JSON.stringify(index_obj,null,'\t')}`)
 }
 
 var deleteAll = function(result,params,ctx) {
@@ -39,7 +37,7 @@ var responseWrapper = function(response){
 }
 
 var searchItem = async function(params) {
-    var query = params.id?`id:${params.id}`:(params.keyword?params.keyword:'*');
+    var query = params.id?`id:"${params.id}"`:(params.keyword?params.keyword:'*');
     var _source = params._source?params._source.split(','):true;
     var params_pagination = {"from":0,"size":config.get('perPageSize')},from;
     if(params.page&&params.per_page){
@@ -52,7 +50,6 @@ var searchItem = async function(params) {
         index: indexName,
         _source:_source
     },queryObj,params_pagination)
-    logger.info(`search in es:${JSON.stringify(searchObj,null,'\t')}`)
     let response = await es_client.search(searchObj)
     return responseWrapper(response)
 }

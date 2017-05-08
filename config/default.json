@@ -25,11 +25,12 @@
     },
 
 	"redis": {
-		"host": "192.168.0.100",
+		"host": "localhost",
 		"port": 6379
 	},
 
    "crawlers":{
+      "concurrency":5,
       "cnpc":{
         "url":"http://www.cnpc/Pages/default.html",
         "selector":{
@@ -41,9 +42,9 @@
         }
       },
      "cnpcag":{
-       "url":"http://10.161.134.146/Login.aspx",
+       "url":"http://10.161.134.146/ShowInfo.aspx?channel=1&&daohang=NewsCenter&&sParamValue=%E5%9B%BE%E7%89%87%E6%96%B0%E9%97%BB",
        "selector":{
-         "photo_news_root":"#NewsList5_divNewsList table tr td",
+         "photo_news_root":"#div_content table tr td",
          "photo_news_html": "#divContent"
        }
      }
