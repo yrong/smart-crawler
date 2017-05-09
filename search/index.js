@@ -14,22 +14,21 @@ var es_client = new elasticsearch.Client({
 
 
 var getIndexName = function() {
-    return 'crawler'
+    return esConfig.index
 }
 
-var addItem = async function(type, obj) {
-    let indexName = getIndexName(),typeName = type
+var addItem = async function(type,obj) {
     let index_obj = {
-        index: indexName,
-        type: typeName,
+        index: getIndexName(),
+        type: type,
         id: obj.id,
         body: obj
     }
     await es_client.index(index_obj)
 }
 
-var deleteAll = function(result,params,ctx) {
-    return es_client.deleteByQuery({index:[getIndexName()],body:{query:{match_all:{}}}})
+var deleteAll = async function() {
+    await es_client.deleteByQuery({index:[getIndexName()],body:{query:{match_all:{}}}})
 }
 
 var responseWrapper = function(response){

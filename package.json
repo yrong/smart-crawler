@@ -2,7 +2,7 @@
   "name": "web-crawler",
   "version": "0.1.0",
   "dependencies": {
-    "async-await-parallel": "^1.0.0",
+    "async-throttle": "^1.1.0",
     "cheerio": "^0.22.0",
     "config": "^1.25.1",
     "elasticsearch": "^13.0.0",
@@ -20,8 +20,7 @@
     "moment": "^2.15.2",
     "redis": "^2.6.3",
     "request": "^2.81.0",
-    "superagent": "^2.3.0",
-    "superagent-charset": "^1.1.1"
+    "request-promise": "^4.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

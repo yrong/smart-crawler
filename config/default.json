@@ -1,52 +1,58 @@
 {
   "port": 4000,
   "name": "crawler",
-  "perPageSize":2000,
-  "logger":{
-      "appenders": [
-        {
-          "type": "console"
-        },
-        {
-          "type": "file",
-          "filename": "crawler.log",
-          "maxLogSize": 20480,
-          "numBackups": 5,
-          "category": "crawler"
-        }
-      ],
-      "replaceConsole": true,
-      "defaultLevel":"INFO"
-    },
-
-    "elasticsearch":{
-        "host": "localhost",
-        "port": 9200
-    },
-
-	"redis": {
-		"host": "localhost",
-		"port": 6379
-	},
-
-   "crawlers":{
-      "concurrency":5,
-      "cnpc":{
-        "url":"http://www.cnpc/Pages/default.html",
-        "selector":{
-          "photo_news_root":"#focus1 ul",
-          "photo_news_html": "#ctl00_PlaceHolderMain_Content__ControlWrapper_RichHtmlField",
-          "photo_news_title": "#ctl00_PlaceHolderMain_Title__ControlWrapper_RichHtmlField h1",
-          "today_news_root":"#ctl00_ctl28_g_49a3948e_e94e_43f5_87ab_a43ea6fa97b9_ctl00_lblHtml ul",
-          "today_news_html":".wenzi2016"
-        }
+  "perPageSize": 2000,
+  "logger": {
+    "appenders": [
+      {
+        "type": "console"
       },
-     "cnpcag":{
-       "url":"http://10.161.134.146/ShowInfo.aspx?channel=1&&daohang=NewsCenter&&sParamValue=%E5%9B%BE%E7%89%87%E6%96%B0%E9%97%BB",
-       "selector":{
-         "photo_news_root":"#div_content table tr td",
-         "photo_news_html": "#divContent"
-       }
-     }
-   }
+      {
+        "type": "file",
+        "filename": "crawler.log",
+        "maxLogSize": 20480,
+        "numBackups": 5,
+        "category": "crawler"
+      }
+    ],
+    "replaceConsole": true,
+    "defaultLevel": "INFO"
+  },
+  "elasticsearch": {
+    "host": "localhost",
+    "port": 9200,
+    "index": "crawler"
+  },
+  "redis": {
+    "host": "localhost",
+    "port": 6379
+  },
+  "crawlers": {
+    "concurrency": 5,
+    "cnpc_today_news": {
+      "url": "http://www.cnpc/zhlm/jrgz/jrgz/Pages/more.aspx",
+      "absolute_link_url": true,
+      "max_page": 5,
+      "selector": {
+        "link": "div.w_newslistpage_body ul li a[href]",
+        "content": ".wenzi2016"
+      }
+    },
+    "cnpc_photo_news": {
+      "url": "http://www.cnpc/zhlm/tpxw/Pages/index.aspx",
+      "absolute_link_url": true,
+      "max_page": 5,
+      "selector": {
+        "link": "div.w_newslistpage_body ul li a[href]",
+        "content": ".wenzi2016"
+      }
+    },
+    "cnpc_ag_photo_news": {
+      "url": "http://10.161.134.146/ShowInfo.aspx?channel=1&&daohang=NewsCenter&&sParamValue=%E5%9B%BE%E7%89%87%E6%96%B0%E9%97%BB",
+      "selector": {
+        "link": "#div_content table tr td a[href]",
+        "content": "#divContent"
+      }
+    }
+  }
 }

@@ -1,6 +1,4 @@
-const superagent = require('superagent')
-const charset = require('superagent-charset')
-charset(superagent)
+const rp = require('request-promise')
 const cheerio = require('cheerio')
 const fs = require('fs')
 const request = require('request')
@@ -9,14 +7,18 @@ const path = require('path')
 const config = require('config')
 const logger = require('../logger')
 
-const loadPage = async (url) => {
-    logger.info(`start loading page from ${url}`)
-    let res = await superagent.get(url).charset('UTF-8')
-    logger.info(`page from ${url} crawled`)
-    return cheerio.load(res.text, {
-        normalizeWhitespace: true,
-        decodeEntities: false
-    })
+const loadPage = async (options) => {
+    logger.info(`start loading page from ${options.uri}`)
+    let response = await rp(Object.assign({}, options,{
+        transform: function (body) {
+            return cheerio.load(body, {
+                normalizeWhitespace: true,
+                decodeEntities: false
+            });
+        }
+    }))
+    logger.info(`page from ${options.uri} crawled`)
+    return response
 }
 
 const downloadFile = async (url, filePath) => {
@@ -46,7 +48,7 @@ const getExternelIP = () =>{
 const cacheImage = async (image_url) =>{
     let images_dir = path.resolve('./public/images_crawled')
     let image_suffix = path.extname(image_url)
-    let image_id = image_url.replace(/[\\&/\:*?<>]/g, "");
+    let image_id = new Buffer(image_url).toString('base64').slice(-240)
     let image_path = images_dir + '/' + image_id  + image_suffix
     if (!fs.existsSync(image_path)){
         logger.info(`start caching image from ${image_url}`)
