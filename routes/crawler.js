@@ -1,32 +1,30 @@
-var Router = require('koa-router');
-var router = new Router()
-var config = require('config')
-var CnpcTodayNewsController = require('../controllers/cnpcTodayNewsController.js')
-var CnpcPhotoNewsController = require('../controllers/cnpcPhotoNewsController.js')
-var CnpcAgPhotoNewsController = require('../controllers/cnpcAgPhotoNewsController')
-var cnpcTodayNewsController = new CnpcTodayNewsController(config.get('crawlers.cnpc_today_news'))
-var cnpcPhotoNewsController = new CnpcPhotoNewsController(config.get('crawlers.cnpc_photo_news'))
-var cnpcAgPhotoNewsController = new CnpcAgPhotoNewsController(config.get('crawlers.cnpc_ag_photo_news'))
+const Router = require('koa-router');
+const router = new Router()
+const config = require('config')
+const _ = require('lodash')
+const pageCrawlController = require('../controllers/pageCrawlController')
+const EventEmitter = require('events').EventEmitter
+const eventEmitter = new EventEmitter()
+const logger = require('../logger')
 
-router.get('/cnpc/photos', async function(ctx, next) {
-    ctx.jsonBody == true
-    let taskId = new Date().getTime()
-    cnpcPhotoNewsController.findPhotoNews(taskId)
-    ctx.body = {taskId};
+_.each(config.get('crawlers'),(crawler_meta_info)=>{
+    router.post(crawler_meta_info.route,async(ctx,next)=>{
+        ctx.jsonBody == true
+        crawler_meta_info.taskId = new Date().getTime()
+        eventEmitter.emit('startCrawler', crawler_meta_info)
+        ctx.body = crawler_meta_info;
+    })
 })
 
-router.get('/cnpc/today', async function(ctx, next) {
-    ctx.jsonBody == true
-    let taskId = new Date().getTime()
-    cnpcTodayNewsController.findTodayNews(taskId)
-    ctx.body = {taskId};
-})
-
-router.get('/cnpcag/photos',async function(ctx,next){
-    ctx.jsonBody == true
-    let taskId = new Date().getTime()
-    cnpcAgPhotoNewsController.crawlPhotoNews(taskId)
-    ctx.body = {taskId};
+eventEmitter.on('startCrawler', async function (crawler_meta_info) {
+    logger.info(`task ${crawler_meta_info.taskId} started`)
+    let start = new Date(),max_page = crawler_meta_info.max_page?crawler_meta_info.max_page:1
+    for(var i=1;i<=max_page;i++){
+        crawler_meta_info.loadRootPageOptions = {uri:crawler_meta_info.url,method:i==1?'GET':'POST'}
+        crawler_meta_info.loadRootPageOptions.form = i>1?{activepage:i}:undefined
+        await pageCrawlController(crawler_meta_info)
+    }
+    logger.info(`task ${crawler_meta_info.taskId} finished,${ new Date() - start} ms consumed`)
 })
 
 module.exports = router;

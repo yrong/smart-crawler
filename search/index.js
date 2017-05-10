@@ -12,15 +12,10 @@ var es_client = new elasticsearch.Client({
     host: esConfig.host + ":" + esConfig.port
 });
 
-
-var getIndexName = function() {
-    return esConfig.index
-}
-
-var addItem = async function(type,obj) {
+var addItem = async function(obj) {
     let index_obj = {
-        index: getIndexName(),
-        type: type,
+        index: esConfig.index,
+        type: esConfig.type,
         id: obj.id,
         body: obj
     }
@@ -28,7 +23,7 @@ var addItem = async function(type,obj) {
 }
 
 var deleteAll = async function() {
-    await es_client.deleteByQuery({index:[getIndexName()],body:{query:{match_all:{}}}})
+    await es_client.deleteByQuery({index:[esConfig.index],body:{query:{match_all:{}}}})
 }
 
 var responseWrapper = function(response){
@@ -44,9 +39,9 @@ var searchItem = async function(params) {
         params_pagination = {"from":from,"size":params.per_page}
     }
     var queryObj = params.body?{body:params.body}:{q:query}
-    let indexName = getIndexName()
     var searchObj = _.assign({
-        index: indexName,
+        index: esConfig.index,
+        type: esConfig.type,
         _source:_source
     },queryObj,params_pagination)
     let response = await es_client.search(searchObj)

@@ -60,7 +60,8 @@ app.use(async(ctx, next) => {
 });
 
 router.use('/crawler', crawler_routes.routes(), crawler_routes.allowedMethods());
-router.use('/search', search_routes.routes(), search_routes.allowedMethods());
+router.use('/api', search_routes.routes(), search_routes.allowedMethods());
+
 app.use(router.routes(), router.allowedMethods());
 
 let port = config.get('port')

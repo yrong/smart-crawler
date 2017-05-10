@@ -4,13 +4,12 @@ const URL = require('url')
 const search = require('../search')
 const Throttle = require('async-throttle')
 const config = require('config')
-const throttle = Throttle(config.get('crawlers.concurrency'))
+const throttle = Throttle(config.get('concurrency'))
 
-module.exports  = async (metaInfo,taskid,category)=>{
-    let start = new Date(), url_obj = URL.parse(metaInfo.url),promises = [],
-        $ = await utils.loadPage(metaInfo.loadRootPageOptions),
+module.exports  = async (metaInfo)=>{
+    let start = new Date(),url_obj = URL.parse(metaInfo.url),
         link_selector = metaInfo.selector.link,html_selector = metaInfo.selector.content,
-        links = $(link_selector)
+        $ = await utils.loadPage(metaInfo.loadRootPageOptions), links = $(link_selector),promises=[]
     logger.info(`find ${links.length} links from "${link_selector}"`)
     links.each((index,element)=>promises.push(throttle(async()=>{
         let url,id,title,$$,$image,image_url,html,item
@@ -34,10 +33,10 @@ module.exports  = async (metaInfo,taskid,category)=>{
                 image_url = url_obj.protocol + "//" + url_obj.host + "/" + encodeURIComponent(image_url)
                 image_url = await utils.cacheImage(image_url)
             }
-            item = {taskid,id,url,title,image_url,html,category,rank:index}
+            item = {id,url,title,image_url,html,rank:index,taskId:metaInfo.taskId,source:metaInfo.source,type:metaInfo.type}
             if(metaInfo.loadRootPageOptions.form&&metaInfo.loadRootPageOptions.form.activepage)
-                item.rank = metaInfo.loadRootPageOptions.form.activepage*10 + index
-            await search.addItem(category,item)
+                item.rank = metaInfo.loadRootPageOptions.form.activepage*links.length + index
+            await search.addItem(item)
         }catch(error){
             logger.error(String(error))
         }

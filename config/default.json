@@ -2,6 +2,7 @@
   "port": 4000,
   "name": "crawler",
   "perPageSize": 2000,
+  "concurrency": 5,
   "logger": {
     "appenders": [
       {
@@ -21,38 +22,47 @@
   "elasticsearch": {
     "host": "localhost",
     "port": 9200,
-    "index": "crawler"
+    "index": "crawler",
+    "type": "crawler"
   },
   "redis": {
     "host": "localhost",
     "port": 6379
   },
-  "crawlers": {
-    "concurrency": 5,
-    "cnpc_today_news": {
+  "crawlers": [
+     {
+      "route": "/cnpc/news",
       "url": "http://www.cnpc/zhlm/jrgz/jrgz/Pages/more.aspx",
+      "source":"cnpc",
+      "type": "news",
       "absolute_link_url": true,
-      "max_page": 5,
+      "max_page": 2,
       "selector": {
         "link": "div.w_newslistpage_body ul li a[href]",
         "content": ".wenzi2016"
       }
     },
-    "cnpc_photo_news": {
+    {
+      "route": "/cnpc/photos",
       "url": "http://www.cnpc/zhlm/tpxw/Pages/index.aspx",
+      "source":"cnpc",
+      "type": "photos",
       "absolute_link_url": true,
-      "max_page": 5,
+      "max_page": 2,
       "selector": {
         "link": "div.w_newslistpage_body ul li a[href]",
         "content": ".wenzi2016"
       }
     },
-    "cnpc_ag_photo_news": {
+    {
+      "route": "/cnpcag/photos",
       "url": "http://10.161.134.146/ShowInfo.aspx?channel=1&&daohang=NewsCenter&&sParamValue=%E5%9B%BE%E7%89%87%E6%96%B0%E9%97%BB",
+      "source": "cnpcag",
+      "type": "photos",
       "selector": {
         "link": "#div_content table tr td a[href]",
         "content": "#divContent"
       }
     }
-  }
+  ]
 }
