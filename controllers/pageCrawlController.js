@@ -24,7 +24,7 @@ module.exports  = async (metaInfo)=>{
                 logger.info(`page already cached,${url}`)
                 return item
             }
-            title = $(element).attr('title')
+            title = $(element).text()
             $$ = await utils.loadPage({uri:url})
             html = $$(html_selector).text()
             $image = $$(html_selector).find('img')
