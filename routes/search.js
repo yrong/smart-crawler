@@ -2,6 +2,7 @@ const Router = require('koa-router');
 const router = new Router()
 const _ = require('lodash')
 const search = require('../search/index')
+const queryString = require('query-string')
 
 router.post('/search',async function(ctx,next){
     ctx.jsonBody == true
@@ -16,21 +17,24 @@ router.get('/show/:id',async function(ctx,next){
     ctx.body = items;
 })
 
-router.get('/list/:source/:type',async function(ctx,next){
+router.all('/list/:source/:type',async function(ctx,next){
     ctx.jsonBody == true
-    let search_params = {
-        "body": {
-            "query": {
-                "bool": {
-                    "must": [
-                        {"term": {"source": ctx.params.source}},
-                        {"term": {"type": ctx.params.type}}
-                    ]
-                }
+    let params = {};
+    if (ctx.url.indexOf('?') >= 0) {
+        params = `?${ctx.url.split('?')[1]}`;
+        params = queryString.parse(params);
+    }
+    params = Object.assign(params,ctx.params,ctx.request.body,{"body": {
+        "query": {
+            "bool": {
+                "must": [
+                    {"term": {"source": ctx.params.source}},
+                    {"term": {"type": ctx.params.type}}
+                ]
             }
         }
-    }
-    var items = await search.searchItem(search_params)
+    }})
+    var items = await search.searchItem(params)
     items.results = items.results.map((item)=>{
         return _.omit(item,'html')
     })

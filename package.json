@@ -19,6 +19,7 @@
     "log4js": "^1.1.1",
     "mkdirp": "^0.5.1",
     "moment": "^2.15.2",
+    "query-string": "^4.3.4",
     "redis": "^2.6.3",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
