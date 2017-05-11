@@ -39,7 +39,8 @@
       "max_page": 2,
       "selector": {
         "link": "div.w_newslistpage_body ul li a[href]",
-        "content": ".wenzi2016"
+        "content": ".wenzi2016",
+        "date": "div.newsDate2016 span.pubtime"
       }
     },
     {
@@ -51,7 +52,8 @@
       "max_page": 2,
       "selector": {
         "link": "div.w_newslistpage_body ul li a[href]",
-        "content": ".wenzi2016"
+        "content": ".wenzi2016",
+        "date": "div.newsDate2016 span.pubtime"
       }
     },
     {

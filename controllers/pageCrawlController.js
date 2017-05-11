@@ -8,11 +8,11 @@ const throttle = Throttle(config.get('concurrency'))
 
 module.exports  = async (metaInfo)=>{
     let start = new Date(),url_obj = URL.parse(metaInfo.url),
-        link_selector = metaInfo.selector.link,html_selector = metaInfo.selector.content,
+        link_selector = metaInfo.selector.link,html_selector = metaInfo.selector.content,date_selector = metaInfo.selector.date
         $ = await utils.loadPage(metaInfo.loadRootPageOptions), links = $(link_selector),promises=[]
     logger.info(`find ${links.length} links from "${link_selector}"`)
     links.each((index,element)=>promises.push(throttle(async()=>{
-        let url,id,title,$$,$image,image_url,html,item
+        let url,id,title,$$,$image,image_url,html,date,item
         try {
             if(metaInfo.absolute_link_url)
                 url = $(element).attr('href')
@@ -33,7 +33,9 @@ module.exports  = async (metaInfo)=>{
                 image_url = url_obj.protocol + "//" + url_obj.host + "/" + encodeURIComponent(image_url)
                 image_url = await utils.cacheImage(image_url)
             }
-            item = {id,url,title,image_url,html,rank:index,taskId:metaInfo.taskId,source:metaInfo.source,type:metaInfo.type}
+            if(date_selector)
+                date = $$(date_selector).text().trim()
+            item = {id,url,title,image_url,html,date,rank:index,taskId:metaInfo.taskId,source:metaInfo.source,type:metaInfo.type}
             if(metaInfo.loadRootPageOptions.form&&metaInfo.loadRootPageOptions.form.activepage)
                 item.rank = metaInfo.loadRootPageOptions.form.activepage*links.length + index
             await search.addItem(item)

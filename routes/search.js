@@ -34,6 +34,8 @@ router.all('/list/:source/:type',async function(ctx,next){
             }
         }
     }})
+    if(!params.sort)
+        params.sort = {sort:'rank'}
     var items = await search.searchItem(params)
     items.results = items.results.map((item)=>{
         return _.omit(item,'html')

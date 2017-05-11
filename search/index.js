@@ -38,13 +38,12 @@ var searchItem = async function(params) {
         from = (String)((parseInt(params.page)-1) * parseInt(params.per_page));
         params_pagination = {"from":from,"size":params.per_page}
     }
-    var params_sort = params.sort?{sort:params.sort}:{sort:'rank'}
     var queryObj = params.body?{body:params.body}:{q:query}
     var searchObj = _.assign({
         index: esConfig.index,
         type: esConfig.type,
         _source:_source
-    },queryObj,params_pagination,params_sort)
+    },queryObj,params_pagination,params.sort)
     let response = await es_client.search(searchObj)
     return responseWrapper(response)
 }
