@@ -37,7 +37,7 @@ module.exports  = async (metaInfo)=>{
                 date = $$(date_selector).text().trim()
             item = {id,url,title,image_url,html,date,rank:index,taskId:metaInfo.taskId,source:metaInfo.source,type:metaInfo.type}
             if(metaInfo.loadRootPageOptions.form&&metaInfo.loadRootPageOptions.form.activepage)
-                item.rank = metaInfo.loadRootPageOptions.form.activepage*links.length + index
+                item.rank = (metaInfo.loadRootPageOptions.form.activepage-1)*links.length + index
             await search.addItem(item)
         }catch(error){
             logger.error(String(error))

@@ -27,7 +27,13 @@ var deleteAll = async function() {
 }
 
 var responseWrapper = function(response){
-    return {count:response.hits.total,results:_.map(response.hits.hits,(result)=>_.omit(result._source,['_index','_type']))}
+    let results = _.map(response.hits.hits,(result)=>{
+        result = _.omit(result._source,['_index','_type'])
+        if(result.image_url)
+            result.image_url = "http://" + config.get('public_ip') + ":" + config.get('port') + result.image_url
+        return result
+    })
+    return {count:response.hits.total,results:results}
 }
 
 var searchItem = async function(params) {

@@ -55,7 +55,7 @@ const cacheImage = async (image_url) =>{
         await downloadFile(image_url,image_path)
         logger.info(`image from ${image_url} cached`)
     }
-    let cached_image_url = "http://" + getExternelIP() + ":" + config.get('port') + "/images_crawled/" + image_id + image_suffix
+    let cached_image_url = "/images_crawled/" + image_id + image_suffix
     return cached_image_url
 }
 
