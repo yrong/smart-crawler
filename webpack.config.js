@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
 var fs = require("fs");
+var gracefulFs = require('graceful-fs');
+gracefulFs.gracefulify(fs);
 
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');

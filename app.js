@@ -14,24 +14,17 @@ const fs = require('fs')
 const crawler_routes = require('./routes/crawler')
 const search_routes = require('./routes/search')
 const logger = require('./logger')
+const mkdirp = require('mkdirp')
 
 /**
  * logger
  */
 const logger_config = config.get('logger')
 const logDir = path.join('./logs')
-if (!fs.existsSync(logDir)){
-    fs.mkdirSync(logDir);
-}
+mkdirp(logDir)
+mkdirp(path.resolve('./public/images_crawled'))
 log4js.configure(logger_config,{ cwd: logDir });
 
-/**
- * image folder
- */
-let images_dir = path.resolve('./public/images_crawled')
-if (!fs.existsSync(images_dir)){
-    fs.mkdirSync(images_dir);
-}
 /**
  * middleware
  */

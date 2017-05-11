@@ -3,7 +3,8 @@ const router = new Router()
 const config = require('config')
 const _ = require('lodash')
 const pageCrawlController = require('../controllers/pageCrawlController')
-const EventEmitter = require('events').EventEmitter
+const Event = require('events')
+const EventEmitter = Event.EventEmitter
 const eventEmitter = new EventEmitter()
 const logger = require('../logger')
 

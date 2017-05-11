@@ -61,5 +61,6 @@ typings/
 .idea
 build
 $Recycle.Bin
+dump.rdb
 
 
