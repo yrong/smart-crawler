@@ -8,7 +8,7 @@ const throttle = Throttle(config.get('concurrency'))
 
 module.exports  = async (metaInfo)=>{
     let start = new Date(),url_obj = URL.parse(metaInfo.url),
-        link_selector = metaInfo.selector.link,html_selector = metaInfo.selector.content,date_selector = metaInfo.selector.date
+        link_selector = metaInfo.selector.link,html_selector = metaInfo.selector.content,date_selector = metaInfo.selector.date,
         $ = await utils.loadPage(metaInfo.loadRootPageOptions), links = $(link_selector),promises=[]
     logger.info(`find ${links.length} links from "${link_selector}"`)
     links.each((index,element)=>promises.push(throttle(async()=>{
