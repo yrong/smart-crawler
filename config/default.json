@@ -64,7 +64,8 @@
       "type": "photos",
       "selector": {
         "link": "#div_content table tr td a[href]",
-        "content": "#divContent"
+        "content": "#divContent",
+        "date": "#lblPublishTime"
       }
     }
   ]

@@ -49,7 +49,7 @@ var searchItem = async function(params) {
         index: esConfig.index,
         type: esConfig.type,
         _source:_source
-    },queryObj,params_pagination,params.sort)
+    },queryObj,params_pagination,{sort:params.sort})
     let response = await es_client.search(searchObj)
     return responseWrapper(response)
 }

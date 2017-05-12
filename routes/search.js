@@ -11,9 +11,10 @@ router.post('/search',async function(ctx,next){
     ctx.body = items;
 })
 
-router.get('/show/:id',async function(ctx,next){
+router.get('/show',async function(ctx,next){
     ctx.jsonBody == true
-    var items = await search.searchItem(ctx.params)
+    let params = queryString.parse(`?${ctx.url.split('?')[1]}`);
+    var items = await search.searchItem(params)
     ctx.body = items;
 })
 
@@ -35,7 +36,7 @@ router.all('/list/:source/:type',async function(ctx,next){
         }
     }})
     if(!params.sort)
-        params.sort = {sort:'rank'}
+        params.sort = 'rank'
     var items = await search.searchItem(params)
     items.results = items.results.map((item)=>{
         return _.omit(item,'html')
