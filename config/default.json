@@ -67,6 +67,17 @@
         "content": "#divContent",
         "date": "#lblPublishTime"
       }
+    },
+    {
+      "route": "/cnodc/news",
+      "url": "http://eip.cnpcint.com/CompanyNewsList/News.aspx",
+      "source": "cnodc",
+      "type": "news",
+      "selector": {
+        "link": "#newslist2 ul li a[href]",
+        "content": "#ctl00_PlaceHolderMain_ctl01__ControlWrapper_RichHtmlField",
+        "date": ".newsDate"
+      }
     }
   ]
 }

@@ -25,7 +25,7 @@ module.exports  = async (metaInfo)=>{
                 return item
             }
             title = $(element).text()
-            $$ = await utils.loadPage({uri:url})
+            $$ = await utils.loadPage({uri:encodeURI(url)})
             html = $$(html_selector).text()
             $image = $$(html_selector).find('img')
             if($image.length){
