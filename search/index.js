@@ -30,7 +30,7 @@ var responseWrapper = function(response){
     let results = _.map(response.hits.hits,(result)=>{
         result = _.omit(result._source,['_index','_type'])
         if(result.image_url)
-            result.image_url = "http://" + config.get('public_ip') + ":" + config.get('port') + result.image_url
+            result.image_url = config.get('image_prefix') + result.image_url
         return result
     })
     return {count:response.hits.total,results:results}
