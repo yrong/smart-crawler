@@ -33,7 +33,7 @@ var plugins = [
         sourceMap: devtool && (devtool.indexOf("sourcemap") >= 0 || devtool.indexOf("source-map") >= 0)
     }),
     new CopyWebpackPlugin(packages, {ignore: ['*.gitignore']}),
-    new CleanWebpackPlugin(['build']),
+    new CleanWebpackPlugin(['build'],{exclude: [ 'public'] }),
     new GitRevisionPlugin(),
     new WebpackShellPlugin({onBuildStart:['echo "Webpack Start"'], onBuildEnd:[`/bin/bash ./postbuild.sh --dir=${releaseDir}`]})
 ];
