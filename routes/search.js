@@ -20,21 +20,33 @@ router.get('/show',async function(ctx,next){
 
 router.all('/list/:source/:type',async function(ctx,next){
     ctx.jsonBody == true
-    let params = {};
+    let params = {},source=ctx.params.source,type=ctx.params.type,searchBody;
     if (ctx.url.indexOf('?') >= 0) {
         params = `?${ctx.url.split('?')[1]}`;
         params = queryString.parse(params);
     }
-    params = Object.assign(params,ctx.params,ctx.request.body,{"body": {
-        "query": {
-            "bool": {
-                "must": [
-                    {"term": {"source": ctx.params.source}},
-                    {"term": {"type": ctx.params.type}}
+    if(source === 'cnpcag'&&type==='news'){
+        type = 'photos'
+    }
+    if(source === 'cnodc'&&type==='photos') {
+        type = 'news'
+    }
+    searchBody = {body: {
+        query: {
+            bool: {
+                must: [
+                    {term: {source: source}},
+                    {term: {type: type}}
                 ]
             }
         }
-    }})
+    }}
+    if(source === 'cnodc'&&ctx.params.type==='photos'){
+        searchBody.body.query.bool.must.push({exists: {
+            field: "image_url"
+        }})
+    }
+    params = Object.assign(params,ctx.params,ctx.request.body,searchBody)
     if(!params.sort)
         params.sort = 'rank'
     var items = await search.searchItem(params)

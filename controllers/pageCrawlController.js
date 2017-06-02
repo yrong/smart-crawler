@@ -8,7 +8,7 @@ const throttle = Throttle(config.get('concurrency'))
 
 module.exports  = async (metaInfo)=>{
     let start = new Date(),url_obj = URL.parse(metaInfo.url),
-        link_selector = metaInfo.selector.link,html_selector = metaInfo.selector.content,date_selector = metaInfo.selector.date,
+        link_selector = metaInfo.selector.link,content_selector = metaInfo.selector.content,date_selector = metaInfo.selector.date,
         $ = await utils.loadPage(metaInfo.loadRootPageOptions), links = $(link_selector),promises=[]
     logger.info(`find ${links.length} links from "${link_selector}"`)
     links.each((index,element)=>promises.push(throttle(async()=>{
@@ -26,10 +26,10 @@ module.exports  = async (metaInfo)=>{
             }
             title = $(element).text()
             $$ = await utils.loadPage({uri:encodeURI(url)})
-            html = $$(html_selector).text()
-            $image = $$(html_selector).find('img')
+            html = $$(content_selector).text()
+            $image = $$(content_selector).find('img')
             if($image.length){
-                image_url = $$(html_selector).find('img').attr('src')
+                image_url = $$(content_selector).find('img').attr('src')
                 image_url = url_obj.protocol + "//" + url_obj.host + "/" + encodeURIComponent(image_url)
                 image_url = await utils.cacheImage(image_url)
             }
