@@ -24,7 +24,7 @@ smart-crawler
       "source":"cnpc",
       //抓取项type字段,用于后续的查询过滤
       "type": "news",
-      //子连接url类型（如果是相对url类型需要根据首页url的host部分凭借完整url
+      //子连接url类型（如果是相对url类型需要根据首页url的host部分拼接完整url）
       "absolute_link_url": true,
       //分页抓取深度
       "max_page": 2,

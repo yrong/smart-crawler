@@ -10,7 +10,6 @@ const logger = require('../logger')
 
 _.each(config.get('crawlers'),(crawler_meta_info)=>{
     router.post(crawler_meta_info.route,async(ctx,next)=>{
-        ctx.jsonBody == true
         crawler_meta_info.taskId = new Date().getTime()
         eventEmitter.emit('startCrawler', crawler_meta_info)
         ctx.body = crawler_meta_info;
